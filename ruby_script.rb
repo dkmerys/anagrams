@@ -15,12 +15,11 @@ anagram.word_checker(user_word_1)
     puts "Gotta keep those special characters out of there. Try again."
   elsif (anagram.anagram_checker(anagram.user_word_1, anagram.user_word_2) == true)
     puts "Those are anagrams. Good work. Try again."
-  elsif (anagram.anagram_checker(anagram.user_word_1, anagra.user_word_2) == false)
+  elsif (anagram.anagram_checker(anagram.user_word_1, anagram.user_word_2) == false)
     puts "Nope. Those aren't anagrams. Let's see if they're close though."
-  elsif (anagram.antigram_checker(anagram.user_word_1, anagram.user_word_2) == false)
-    puts "Not antigrams either. Just two words that are kinda close to each other."
-  elsif (anagram.antigram_checker(anagram.user_word_1, anagram.user_word_2) == false)
-    puts "Wow. Those words have literally nothing in common. I sorta feel like you did that on purpose."
+    if (anagram.antigram_checker(anagram.user_word_1, anagram.user_word_2) == true)
+      puts "Not antigrams either. Just two words that are kinda close to each other."
+    elsif (anagram.antigram_checker(anagram.user_word_1, anagram.user_word_2) == false)
+      puts "Wow. Those words have literally nothing in common. I sorta feel like you did that on purpose."
     end
   end
-end
