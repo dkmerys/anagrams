@@ -12,14 +12,19 @@ describe ('Anagram') do
     expect(anagram.word_checker).to(eq(false))
   end
 
-  it ("replaces special characters in a word with spaces") do
+  it ("replaces special characters in a word with asterix") do
     anagram = Anagram.new("Hello!", "World!")
-    expect(anagram.user_word_1).to(eq("hello "))
+    expect(anagram.user_word_1).to(eq("hello*"))
   end
 
-  it ("accepts 2 user inputs and removes special characters") do
+  it ("accepts 2 user inputs and replaces special characters with asterix") do
     anagram = Anagram.new("Hello!", "Fr!ends")
-    expect(anagram.user_word_1).to(eq("hello "))
-    expect(anagram.user_word_2).to(eq("fr ends"))
+    expect(anagram.user_word_1).to(eq("hello*"))
+    expect(anagram.user_word_2).to(eq("fr*ends"))
+  end
+
+  it ("checks if user input contains special characters") do
+    anagram = Anagram.new("Hello!", "World")
+    expect(anagram.character_checker).to(eq(false))
   end
 end
