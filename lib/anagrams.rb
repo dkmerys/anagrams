@@ -25,6 +25,12 @@ class Anagram
   end
 
   def anagram_checker(word1, word2)
-    word_1_array = word1.split("")
-    word_2_array = word2.split("")
+    word_1_array = word1.split("").sort
+    word_2_array = word2.split("").sort
+    if (word_1_array == word_2_array)
+      return true
+    else
+      return false
+    end
+  end
 end
