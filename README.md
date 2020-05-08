@@ -37,7 +37,18 @@ Ruby
 Ruby Gems
 
 ### Specs
-
+| Spec                                                                         | Input             | Output             |
+|------------------------------------------------------------------------------|-------------------|--------------------|
+| Accepts 2 user inputs and converts them to lowercase                         | "HELLO", "hello"  | "hello", "hello"   |
+| Returns 'false' if either input contains no vowels                           | "bcd", "fgh"      | false              |
+| Return 'true' if both user inputs contain vowels                             | "bcde", "aeiou"   | true               |
+| Replaces special characters in a word with an asterix                        | "Hello!" "World!" | "hello*", "world*" |
+| Returns 'true' if user inputs contain no special characters                  | "Hello", "World"  | true               |
+| Returns 'false' if either user input contains special characters             | "Hello!", "World" | false              |
+| Returns 'true' if both user inputs contain the same array of letters         | "Elvis", "Lives"  | true               |
+| Returns 'false' if both user inputs do not contain the same array of letters | "Elvis", "Hawaii" | false              |
+| Returns 'false if both user inputs share no letters                          | "hi", "bye"       | false              |
+| Returns 'true" if both user inputs share any letters                         | "hi", "hello"     | true               |
 
 
 
