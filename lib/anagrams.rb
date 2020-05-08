@@ -23,4 +23,8 @@ class Anagram
       return true
     end
   end
+
+  def anagram_checker(word1, word2)
+    word_1_array = word1.split("")
+    word_2_array = word2.split("")
 end

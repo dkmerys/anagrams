@@ -37,4 +37,9 @@ describe ('Anagram') do
     anagram = Anagram.new("Hello!", "World")
     expect(anagram.character_checker(anagram.user_word_1)).to(eq(false))
   end
+
+  it ("returns true if both user inputs contain the same array of letters") do
+    anagram = Anagram.new("Elvis", "Lives")
+    expect(anagram.anagram_checker(anagram.user_word_1, anagram.user_word_2)).to(eq(true))
+  end
 end
