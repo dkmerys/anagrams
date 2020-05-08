@@ -10,8 +10,10 @@ class Anagram
 
   def word_checker(*words)
     vowels = ["a", "e", "i", "o", "u", "y"]
-    words.chars.all? do |char|
-      vowels.include?(char)
+    words.all? do |word|
+      word.chars.any? do |char|
+        vowels.include?(char)
+      end
     end
   end
 
