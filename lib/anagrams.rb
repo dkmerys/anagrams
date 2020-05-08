@@ -3,7 +3,7 @@ require 'pry'
 class Anagram
   attr_reader(:user_word_1)
   def initialize(user_word_1)
-    @user_word_1 = user_word_1.downcase
+    @user_word_1 = user_word_1.downcase.gsub(/[!@#$%^&*()+={}"':;?><.,~]/, " ")
   end
 
   def word_checker

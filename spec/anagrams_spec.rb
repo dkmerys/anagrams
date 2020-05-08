@@ -7,8 +7,13 @@ describe ('Anagram') do
     expect(anagram.user_word_1).to(eq("hello"))
   end
 
-  it ("checks if user input is a word") do
+  it ("checks if user input contains a vowel") do
     anagram = Anagram.new("bcd")
     expect(anagram.word_checker).to(eq(false))
+  end
+
+  it ("replaces special characters in a word with spaces") do
+    anagram = Anagram.new("Hello!")
+    expect(anagram.user_word_1).to(eq("hello "))
   end
 end
