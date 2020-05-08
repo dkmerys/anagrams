@@ -5,19 +5,18 @@ class Anagram
   def initialize(user_word_1, user_word_2)
     @user_word_1 = user_word_1.downcase.gsub(/[!@#$%^&*()+={}"':;?><.,~]/, "*")
     @user_word_2 = user_word_2.downcase.gsub(/[!@#$%^&*()+={}"':;?><.,~]/, "*")
-    
+
   end
 
-  def word_checker(vowel_checked)
-    user_letters = vowel_checked.split("")
+  def word_checker(*words)
     vowels = ["a", "e", "i", "o", "u", "y"]
-    user_letters.any? do |letter|
-      vowels.include?(letter)
+    words.chars.all? do |char|
+      vowels.include?(char)
     end
   end
 
-  def character_checker(char_checked)
-    if (char_checked.include? ("*"))
+  def char_checker(word1, word2)
+    if (word1.include? ("*") || word2.include?("*"))
       return false
     else 
       return true

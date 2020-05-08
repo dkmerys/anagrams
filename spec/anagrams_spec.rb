@@ -29,13 +29,13 @@ describe ('Anagram') do
   end
 
   it ("returns true if user input contains no special characters") do
-    anagram = Anagram.new("Hello!", "World")
-    expect(anagram.character_checker(anagram.user_word_2)).to(eq(true))
+    anagram = Anagram.new("Hello", "World")
+    expect(anagram.char_checker(anagram.user_word_1, anagram.user_word_2)).to(eq(true))
   end
 
   it ("returns false if user input contains special characters") do
     anagram = Anagram.new("Hello!", "World")
-    expect(anagram.character_checker(anagram.user_word_1)).to(eq(false))
+    expect(anagram.char_checker(anagram.user_word_1, anagram.user_word_2)).to(eq(false))
   end
 
   it ("returns true if both user inputs contain the same array of letters") do
