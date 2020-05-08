@@ -1,9 +1,14 @@
 require ('rspec')
 require ('anagrams')
 
-describe ('Word_Checker') do
+describe ('Anagram') do
   it ("accepts user input") do
-    word_checker = Word_Checker.new("HELLO")
-    expect(word_checker.user_word_1).to(eq("hello"))
+    anagram = Anagram.new("HELLO")
+    expect(anagram.user_word_1).to(eq("hello"))
+  end
+
+  it ("checks if user input is a word") do
+    anagram = Anagram.new("bcd")
+    expect(anagram.word_checker).to(eq(false))
   end
 end
