@@ -48,8 +48,13 @@ describe ('Anagram') do
     expect(anagram.anagram_checker(anagram.user_word_1, anagram.user_word_2)).to(eq(false))
   end
 
-  it ("returns true if both user inputs share no letters") do
+  it ("returns false if both user inputs share no letters") do
     anagram = Anagram.new("hi", "bye")
-    expect(anagram.anagram_checker(anagram.user_word_1, anagram.user_word_2)).to(eq(true))
+    expect(anagram.antigram_checker(anagram.user_word_1, anagram.user_word_2)).to(eq(false))
+  end
+
+  it ("returns true if both user inputs share any letters") do
+    anagram = Anagram.new("hi", "hello")
+    expect(anagram.antigram_checker(anagram.user_word_1, anagram.user_word_2)).to(eq(true))
   end
 end

@@ -12,7 +12,7 @@ class Anagram
     user_letters = vowel_checked.split("")
     vowels = ["a", "e", "i", "o", "u", "y"]
     user_letters.any? do |letter|
-    vowels.include?(letter)
+      vowels.include?(letter)
     end
   end
 
@@ -31,6 +31,14 @@ class Anagram
       return true
     else
       return false
+    end
+  end
+
+  def antigram_checker(word1, word2)
+    word_1_array = word1.split("").sort
+    word_2_array = word2.split("").sort
+    word_1_array.any? do |letter|
+      word_2_array.include?(letter)
     end
   end
 end
