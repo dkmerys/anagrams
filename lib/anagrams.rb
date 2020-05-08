@@ -5,7 +5,7 @@ class Anagram
   def initialize(user_word_1, user_word_2)
     @user_word_1 = user_word_1.downcase.gsub(/[!@#$%^&*()+={}"':;?><.,~]/, "*")
     @user_word_2 = user_word_2.downcase.gsub(/[!@#$%^&*()+={}"':;?><.,~]/, "*")
-
+    
   end
 
   def word_checker(vowel_checked)
