@@ -7,9 +7,14 @@ describe ('Anagram') do
     expect(anagram.user_word_1).to(eq("hello"))
   end
 
-  it ("checks if user input contains a vowel") do
+  it ("returns false if user input contains no vowel") do
     anagram = Anagram.new("bcd", "aeiou")
-    expect(anagram.word_checker).to(eq(false))
+    expect(anagram.word_checker(anagram.user_word_1)).to(eq(false))
+  end
+
+  it ("returns true if user input contains a vowel") do
+    anagram = Anagram.new("bcd", "aeiou")
+    expect(anagram.word_checker(anagram.user_word_2)).to(eq(true))
   end
 
   it ("replaces special characters in a word with asterix") do
@@ -23,8 +28,13 @@ describe ('Anagram') do
     expect(anagram.user_word_2).to(eq("fr*ends"))
   end
 
-  it ("checks if user input contains special characters") do
+  it ("returns true if user input contains no special characters") do
     anagram = Anagram.new("Hello!", "World")
-    expect(anagram.character_checker).to(eq(false))
+    expect(anagram.character_checker(anagram.user_word_2)).to(eq(true))
+  end
+
+  it ("returns false if user input contains special characters") do
+    anagram = Anagram.new("Hello!", "World")
+    expect(anagram.character_checker(anagram.user_word_1)).to(eq(false))
   end
 end

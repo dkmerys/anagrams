@@ -8,17 +8,16 @@ class Anagram
 
   end
 
-  def word_checker
-    user_letters = user_word_1.split
+  def word_checker(vowel_checked)
+    user_letters = vowel_checked.split("")
     vowels = ["a", "e", "i", "o", "u", "y"]
-    # binding.pry
     user_letters.any? do |letter|
     vowels.include?(letter)
     end
   end
 
-  def character_checker
-    if (@user_word_1.include? ("*"))
+  def character_checker(char_checked)
+    if (char_checked.include? ("*"))
       return false
     else 
       return true
